@@ -1,12 +1,11 @@
 const bcrypt = require("bcrypt");
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 // const dotenv = require("dotenv").config();
-const User = require("../models/Users-mongo");
+const User = require("../models/Users");
 
 exports.register = (req, res, next) => {
     console.log(req.body.email);
     console.log(req.body.password);
-
     bcrypt.hash(req.body.password, 10)
     .then((hash) => {
         const user = new User({

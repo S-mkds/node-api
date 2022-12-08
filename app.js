@@ -23,14 +23,21 @@ app.use((req, res, next) => {
   next();
 });
 
-// import des routers
+// *****import des routers*****
+//mongodb
 const userRoutes = require("./Routers/User-router");
 const groupsRoutes = require("./Routers/Groups-router");
+//mysql
+const userRoutesSql = require("./Routers/User-router-sql");
+const groupsRoutesSql = require("./Routers/Groups-router-sql");
 
-//TESTING HERE
-// Routes 
+// *****Routes*****
 app.use(userRoutes);
 // app.use(GroupsRoutes);
+
+// app.use(userRoutesSql);
+// app.use(groupsRoutesSql);
+
 
 module.exports = app;
 
