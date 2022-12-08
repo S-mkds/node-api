@@ -3,9 +3,8 @@ const uniqueValidator = require("mongoose-unique-validator"); //import MongooseU
 
 // create schema user
 const groupsSchema = mongoose.Schema({
-title: { type: String, required: true },
-firstname: { type: String, required: true },
-lastname: { type: String, required: true },
+name: { type: String, required: true, default: Date.now },
+description: { type: String, required: true, default: Date.now },
 createdAt: { type: Date, default: Date.now },
 updatedAt: { type: Date, default: Date.now },
 });

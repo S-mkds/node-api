@@ -1,13 +1,13 @@
 // Connection on data base MongoDB with mongoose.connect
-// const mongoose = require("mongoose"); // import de mongoose
+const mongoose = require("mongoose"); // import de mongoose
 
-// mongoose
-//   .connect('mongodb+srv://mongo-api-node:wYvwrFSJuiiXp7HJ@cluster0.cmrendi.mongodb.net/?retryWrites=true&w=majority', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log("Connexion à MongoDB réussie !"))
-//   .catch(() => console.log("Connexion à MongoDB échouée !"));
+mongoose
+  .connect('mongodb+srv://mongo-api-node:wYvwrFSJuiiXp7HJ@cluster0.cmrendi.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connexion à MongoDB réussie !"))
+  .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 // ******************Connection on data base Mysql with Xampp ***************************************************************
 var mysql = require('mysql');

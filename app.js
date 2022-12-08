@@ -33,7 +33,7 @@ const groupsRoutesSql = require("./Routers/Groups-router-sql");
 
 // *****Use Routers*****
 app.use(userRoutes);
-// app.use(GroupsRoutes);
+app.use(groupsRoutes);
 
 app.use(userRoutesSql);
 // app.use(groupsRoutesSql);

@@ -4,11 +4,9 @@ const jwt = require("jsonwebtoken");
 const Groups = require("../models/Groups");
 
 exports.createGroups = (req, res, next) => {
-
     const Groups = new Groups({
-        title: req.body.title,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        name: req.body.name,
+        description: req.body.description,
         createdAt: req.body.createdAt,
         updatedAt: req.body.updatedAt
     });

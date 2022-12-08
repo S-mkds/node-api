@@ -29,3 +29,5 @@ user.findAll = async (req, res) => {
     res.send(200).send(result)
 }
 
+module.exports = user
+
