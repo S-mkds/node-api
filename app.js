@@ -27,14 +27,16 @@ app.use((req, res, next) => {
 //mongodb
 const userRoutes = require("./Routers/User-router");
 const groupsRoutes = require("./Routers/Groups-router");
-//mysql
+//MySQL
 const userRoutesSql = require("./Routers/User-router-sql");
 const groupsRoutesSql = require("./Routers/Groups-router-sql");
 
 // *****Use Routers*****
-app.use(userRoutes);
-app.use(groupsRoutes);
+//MongoDB
+// app.use(userRoutes);
+// app.use(groupsRoutes);
 
+//MySQL
 app.use(userRoutesSql);
 // app.use(groupsRoutesSql);
 

@@ -21,7 +21,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err + console.log("Failed to connect Mysql database ❌ 💀!");;
-  console.log("Connected to MySQL Database ✅ !");
+  console.log("Connected to MySQL Database ✅ 🎏!");
 })
 
 

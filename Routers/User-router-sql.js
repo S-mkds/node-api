@@ -1,23 +1,20 @@
 var express = require('express');
-// const user = require('../Controllers/Users-controllers-sql');
 var router = express.Router();
 
-// var userCtrl = require('../Controllers/Users-controllers-sql')
+var userCtrlSql = require('../Controllers/Users-controller-sql');
 
-// //POST ROUTE
-// router.post('/register', userCtrl.register);
+//POST METHOD
+router.post('/signup', userCtrlSql.signup);
+router.post('/login', userCtrlSql.login);
 
-// router.post('/login', userCtrl.login);
+//GET METHOD
+router.get('/users/:id', userCtrlSql.findOneById);
+router.get('/', userCtrlSql.findAll);
 
-// //GET ROUTE
-// router.get('/users/:id', userCtrl.getOneUser);
+//PUT METHOD
+router.put('/users/:id', userCtrlSql.modifyUser);
 
-// router.get('/', userCtrl.getAllUser);
-
-// //PUT ROUTE
-// router.put('/users/:id', userCtrl.modifyUser);
-
-// //DELETE ROUTE
-// router.delete('/delete/:id', userCtrl.deleteOneUser);
+//DELETE METHOD
+router.delete('/users/:id', userCtrlSql.deleteUsers);
 
 module.exports = router;

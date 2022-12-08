@@ -1,8 +1,7 @@
-var useModel = require('../models//Users-mysql'); 
-var { validationResult } = require('express-validatior');
-
+const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const accessTokenSecret = 'your-access-token'
+var useModel = require('../models//Users-mysql');
 
 var user = {}
 
@@ -62,6 +61,7 @@ user.findAll = async (req, res) => {
     let result = await useModel.findAll()
     res.send(200).send(result)
 }
+
 
 user.findOneById = async (req, res) => {
     let result = await useModel.findOneById(req.params.id)
