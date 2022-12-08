@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// *****import des routers*****
+// *****Import des Routers*****
 //mongodb
 const userRoutes = require("./Routers/User-router");
 const groupsRoutes = require("./Routers/Groups-router");
@@ -31,11 +31,11 @@ const groupsRoutes = require("./Routers/Groups-router");
 const userRoutesSql = require("./Routers/User-router-sql");
 const groupsRoutesSql = require("./Routers/Groups-router-sql");
 
-// *****Routes*****
+// *****Use Routers*****
 app.use(userRoutes);
 // app.use(GroupsRoutes);
 
-// app.use(userRoutesSql);
+app.use(userRoutesSql);
 // app.use(groupsRoutesSql);
 
 

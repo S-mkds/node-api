@@ -8,6 +8,7 @@ var userCtrl = require('../Controllers/Users-controllers')
 router.post('/register', userCtrl.register);
 
 router.post('/login', userCtrl.login);
+
 //GET ROUTE
 router.get('/users/:id', userCtrl.getOneUser);
 
