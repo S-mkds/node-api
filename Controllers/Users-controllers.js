@@ -1,14 +1,14 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 // const dotenv = require("dotenv").config();
-const User = require("../models/Users");
+const userMongo = require("../models/Users");
 
 exports.register = (req, res, next) => {
     console.log(req.body.email);
     console.log(req.body.password);
     bcrypt.hash(req.body.password, 10)
     .then((hash) => {
-        const user = new User({
+        const user = new userMongo({
             email: req.body.email,
             password: hash,
             firstname: req.body.firstname,
@@ -30,7 +30,7 @@ exports.register = (req, res, next) => {
 }; 
 
 exports.login = (req, res, next) => {
-    User.findOne({
+    userMongo.findOne({
         email: req.body.email,
     })
     .then((user) => {
@@ -57,7 +57,7 @@ exports.login = (req, res, next) => {
 };
 
 exports.getOneUser = (req, res, next) => {
-    User.findById(req.params.id)
+    userMongo.findById(req.params.id)
     .then((user) => {
         res.status(200).json(user);
     })
@@ -65,7 +65,7 @@ exports.getOneUser = (req, res, next) => {
 };
 
 exports.getAllUser = (req, res, next) => {
-    User.find()
+    userMongo.find()
     .then((user) => {
         res.status(200).json(user);
     })
@@ -77,7 +77,7 @@ exports.modifyUser = (req,res) => {
 };
 
 exports.modifyPost = (req, res, next) => {
-    Post.updateOne({ _id: req.params.id })
+    userMongo.updateOne({ _id: req.params.id })
     .then(() => res.status(200).json({ message: "Utilisateur bien modifiée !" }))
     .catch((error) =>
         res.status(403).json({ error: error, message: "Requête non autorisée !" })
@@ -85,7 +85,7 @@ exports.modifyPost = (req, res, next) => {
 };
 
 exports.deleteOneUser = (req, res, next) => {
-    User.findById(req.params.id)
+    userMongo.findById(req.params.id)
     .then((user) => {
         User.deleteOne({ req: req.params.id })
         .then((user) => res.status(200).json(user))

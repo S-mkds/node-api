@@ -10,19 +10,19 @@ mongoose
   .catch(() => console.log("Connexion à MongoDB échouée !"));
 
 // ******************Connection on data base Mysql with Xampp ***************************************************************
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "node-api"
-});
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "node-api"
+// });
 
-con.connect(function(err) {
-  if (err) throw err + console.log("Failed to connect Mysql database !");;
-  console.log("Connected to Mysql database !");
-})
+// con.connect(function(err) {
+//   if (err) throw err + console.log("Failed to connect Mysql database !");;
+//   console.log("Connected to Mysql database !");
+// })
 
 //**** Vérifaication des données des tables dans la base de donnée avec un console.log ****/
   // con.query("SELECT * FROM user", function (err, result, fields){
